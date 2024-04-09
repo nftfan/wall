@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wallet Cards</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #1f1f1f; /* Dark background color */
+    color: #fff; /* Text color */
+    padding: 20px;
+    text-align: center;
+  }
+  
+  @keyframes rainbow-border {
+    0% {
+      border-color: red;
+    }
+    50% {
+      border-color: yellow;
+    }
+    100% {
+      border-color: red;
+    }
+  }
+
+  .search-bar {
+    margin-bottom: 20px;
+  }
+
+  .search-bar input[type="text"] {
+    width: 400px; /* Adjust width as needed */
+    padding: 10px;
+    border: 2px solid;
+    border-radius: 20px;
+    background-color: #333; /* Darker background color */
+    color: #fff;
+    font-size: 16px;
+    outline: none;
+    transition: background-color 0.3s ease;
+    animation: rainbow-border 2s infinite; /* Adjusted animation duration to 2s */
+  }
+
+  .search-bar input[type="text"]::placeholder {
+    color: #999; /* Placeholder text color */
+  }
+
+  .search-bar input[type="text"]:focus {
+    background-color: #555; /* Darker background color on focus */
+  }
+
+  .search-bar button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    background-color: #4CAF50; /* Green button color */
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .search-bar button:hover {
+    background-color: #45a049; /* Darker green color on hover */
+  }
+
+  .card {
+    background-color: #333; /* Darker card background color */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin: 10px;
+    width: 200px;
+    display: inline-block;
+    transition: transform 0.3s ease-in-out; /* Add transition effect */
+    border: 1px solid; /* Add border */
+  }
+
+  .card:hover {
+    transform: scale(1.05); /* Increase size on hover */
+    animation: rainbow-border 2s infinite; /* Add animation to border on hover */
+  }
+
+  .card img {
+    width: 100%;
+    height: auto;
+  }
+
+  .card-content {
+    padding: 15px;
+  }
+
+  .card-address {
+    font-size: 7px;
+    margin-bottom: 0; /* Remove bottom margin */
+    text-align: center;
+    overflow-wrap: break-word; /* Wrap long addresses */
+    word-wrap: break-word;
+    hyphens: auto;
+    line-height: 1.2; /* Adjust line height */
+  }
+  .tokens-collected {
+    font-size: 7px;
+    margin-bottom: 0; /* Remove bottom margin */
+    text-align: center;
+    overflow-wrap: break-word; /* Wrap long addresses */
+    word-wrap: break-word;
+    hyphens: auto;
+    line-height: 1.2; /* Adjust line height */
+  }
+</style>
+
+</head>
+<body>
+
+<div class="search-bar">
+  <form id="searchForm">
+    <input type="text" id="walletInput" placeholder="Paste your wallet">
+    <button type="submit">Search</button>
+  </form>
+</div>
+<div class="reward-info">
+  <p style="color: #999; font-size: 8px;">Next Reward in:</p>
+  <p id="countdown" style="color: #999; font-size: 8px;"></p>
+  <p style="color: #999; font-size: 8px;">Amount: 1KT $nftfan</p>
+</div>
+
+<!-- Wallet Cards -->
+<div id="walletCards">
+  <!-- First Card -->
+  <div class="card">
+    <img src="https://i.seadn.io/s/raw/files/749021b85f1f70dd027a146fd7532039.png?auto=format&dpr=1&w=1000" alt="Avatar">
+    <div class="card-content">
+      <p class="card-address">0x7a5df50a845975d00a46809a2a23037f6be2dfda</p>
+      <p class="tokens-collected">Tokens Collected: 10000000000</p>
+    </div>
+  </div>
+
+  <!-- Second Card -->
+  <div class="card">
+    <img src="https://i.seadn.io/s/raw/files/350f36ca4318d025691ea2583dc6ed3c.png?auto=format&dpr=1&w=1000" alt="Avatar">
+    <div class="card-content">
+      <p class="card-address">0x000000000000000000000000000000000000dead</p>
+      <p class="tokens-collected">Tokens Collected: 10000000000</p>
+    </div>
+  </div>
+
+  <!-- Third Card -->
+  <div class="card">
+    <img src="https://i.seadn.io/s/raw/files/6f229cee3648016dcc20bfb7dde5aed7.png?auto=format&dpr=1&w=1000" alt="Avatar">
+    <div class="card-content">
+      <p class="card-address">0xbcb871eb6ca18b8832033601897963d825a4b490</p>
+      <p class="tokens-collected">Tokens Collected: 10000000000</p>
+    </div>
+  </div>
+
+  <!-- Fourth Card -->
+  <div class="card">
+    <img src="https://i.seadn.io/s/raw/files/749021b85f1f70dd027a146fd7532039.png?auto=format&dpr=1&w=1000" alt="Avatar">
+    <div class="card-content">
+      <p class="card-address">0x92d550cdbc234211957bd1b579d962c885a127ba</p>
+      <p class="tokens-collected">Tokens Collected: 10000000000</p>
+    </div>
+  </div>
+
+  <!-- Fifth Card -->
+  <div class="card">
+    <img src="https://i.seadn.io/s/raw/files/749021b85f1f70dd027a146fd7532039.png?auto=format&dpr=1&w=1000" alt="Avatar">
+    <div class="card-content">
+      <p class="card-address">0xa92fb3c6a5c71a24fcbd6da8464a6186ff2c79b7</p>
+      <p class="tokens-collected">Tokens Collected: 10000000000</p>
+    </div>
+  </div>
+</div>
+
+
+<script>
+  document.getElementById('searchForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent form submission
+    var walletInput = document.getElementById('walletInput').value.trim().toLowerCase();
+    var cards = document.querySelectorAll('.card');
+
+    cards.forEach(function(card) {
+      var address = card.querySelector('.card-address').textContent.trim().toLowerCase();
+      if (address === walletInput) {
+        card.style.display = 'inline-block';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  });
+</script>
+<script>
+
+// Function to calculate the countdown
+function calculateCountdown() {
+  // Set the date of April 30, 2024
+  const targetDate = new Date("2024-04-30T00:00:00Z");
+  // Get the current date
+  const currentDate = new Date();
+  // Calculate the difference in milliseconds
+  const difference = targetDate - currentDate;
+  
+  // Calculate days, hours, minutes, and seconds
+  const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+  
+  // Display the countdown
+  document.getElementById("countdown").textContent = `${days} days ${hours} hours ${minutes} minutes ${seconds} seconds`;
+}
+
+// Call the function once to display the initial countdown
+calculateCountdown();
+
+// Update the countdown every second
+setInterval(calculateCountdown, 1000);
+
+
+</script>
+
+</body>
+</html>
+
